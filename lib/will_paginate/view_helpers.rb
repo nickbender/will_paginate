@@ -42,7 +42,7 @@ module WillPaginate
 
     # Returns HTML representing page links for a WillPaginate::Collection-like object.
     # In case there is no more than one page in total, nil is returned.
-    # 
+    #
     # ==== Options
     # * <tt>:class</tt> -- CSS class name for the generated DIV (default: "pagination")
     # * <tt>:previous_label</tt> -- default: "« Previous"
@@ -61,7 +61,7 @@ module WillPaginate
     #
     # All options not recognized by will_paginate will become HTML attributes on the container
     # element for pagination links (the DIV). For example:
-    # 
+    #
     #   <%= will_paginate @posts, :style => 'color:blue' %>
     #
     # will result in:
@@ -74,8 +74,8 @@ module WillPaginate
 
       options = WillPaginate::ViewHelpers.pagination_options.merge(options)
 
-      options[:previous_label] ||= will_paginate_translate(:previous_label) { '&#8592; Previous' }
-      options[:next_label]     ||= will_paginate_translate(:next_label) { 'Next &#8594;' }
+      options[:previous_label] ||= will_paginate_translate(:previous_label) { "<i class='fa fa-arrow-circle-o-left'></i> Previous".html_safe }
+      options[:next_label]     ||= will_paginate_translate(:next_label) { "Next <i class='fa fa-arrow-circle-o-right'></i>".html_safe }
 
       # get the renderer instance
       renderer = case options[:renderer]
