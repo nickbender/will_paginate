@@ -66,7 +66,7 @@ GEM
       linecache (>= 0.3)
     sqlite3 (1.3.6)
     thread_safe (0.3.4)
-    tzinfo (0.3.39)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
